@@ -20,7 +20,7 @@ public class WaitingForRider implements DriverState {
 	
 	public void waitingForRider() {
 		System.out.println("Driver is waiting for the Rider");
-		driver.setDriverState(driver.getWaitingForRider());
+		//driver.setDriverState(driver.getWaitingForRider());
 	}
 
 	public void getsRequest() {

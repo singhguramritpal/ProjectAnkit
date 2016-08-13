@@ -2,7 +2,7 @@ package uber.dispatchDriver;
 
 import com.uber.members.Driver;
 
-public class IsOffline implements DriverState{
+public class IsOffline {
 	
 	Driver driver;
 	
@@ -10,17 +10,17 @@ public class IsOffline implements DriverState{
 		this.driver = driver;
 	}
 
-	public void isOffline() {
+	//public void isOffline() {
 		
-		if(driver.getOnline()){
-			System.out.println("Driver is online");
-			driver.setDriverState(driver.getIsOnline());
-		}
-		else{
-			System.out.println("Driver is Offline");
-			driver.setDriverState(driver.getIsOffline());
-		}
-	}
+		//if(driver.getOnline()){
+//			System.out.println("Driver is online");
+//			driver.setDriverState(driver.getIsOnline());
+//		}
+//		else{
+//			System.out.println("Driver is Offline");
+//			driver.setDriverState(driver.getIsOffline());
+//		}
+//	}
 
 	public void isOnline() {
 		System.out.println("Driver is Offline");
