@@ -1,7 +1,8 @@
-package uber.request;
+package com.uber.request;
 
 import java.util.ArrayList;
-import uber.members.Driver;
+
+import com.uber.members.Driver;
 
 public abstract class Fare {
 

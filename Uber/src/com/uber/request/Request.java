@@ -1,8 +1,8 @@
-package uber.request;
+package com.uber.request;
 
 import java.util.Date;
 
-public class Request {
+public class Request implements RideRequestInterface {
 	
 	private int requestId;
 	
@@ -13,7 +13,11 @@ public class Request {
 	private String vehicleType;
 	private double fareEstimation;
 	
+	RequestState requestState;
 	
+	public Request() {
+		requestState = new RequestInQueue(this);
+	}
 	public int getRequestId() {
 		return requestId;
 	}
@@ -50,6 +54,44 @@ public class Request {
 	public void setFareEstimation(double fareEstimation) {
 		this.fareEstimation = fareEstimation;
 	}
+	@Override
+	public void requestInQueue() {
+		// TODO Auto-generated method stub
+		System.out.println(requestState.requestInQueue());
+		
+	}
+
+	@Override
+	public void requestCancelled() {
+		// TODO Auto-generated method stub
+		System.out.println(requestState.requestCancelled());
+		
+	}
+
+	@Override
+	public void requestAccepted() {
+		// TODO Auto-generated method stub
+		System.out.println(requestState.requestAccepted());
+		
+	}
+
 	
+	@Override
+	public void requestCompleted() {
+		// TODO Auto-generated method stub
+		System.out.println(requestState.requestCompleted());
+		
+	}
+	@Override
+	public RequestState getState() {
+		// TODO Auto-generated method stub
+		return requestState;
+	}
+	@Override
+	public void setState(RequestState requestState) {
+		// TODO Auto-generated method stub
+		this.requestState=requestState;
+		
+	}
 
 }

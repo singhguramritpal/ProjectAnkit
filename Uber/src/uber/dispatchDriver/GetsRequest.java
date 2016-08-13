@@ -1,6 +1,6 @@
 package uber.dispatchDriver;
 
-import uber.members.Driver;
+import com.uber.members.Driver;
 
 public class GetsRequest implements DriverState{
 

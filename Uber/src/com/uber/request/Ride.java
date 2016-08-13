@@ -1,4 +1,4 @@
-package uber.request;
+package com.uber.request;
 
 public class Ride {
 	

@@ -1,7 +1,8 @@
 package uber.dispatchDriver;
 
+import com.uber.members.Driver;
+
 import uber.dispatchDriver.DriverState;
-import uber.members.Driver;
 
 public class HasRider implements DriverState{
 	
