@@ -1,4 +1,4 @@
-package com.uber.request;
+	package com.uber.request;
 
 public interface RideRequestInterface {
 	
@@ -8,7 +8,9 @@ public interface RideRequestInterface {
 	public void requestCompleted();
 	public RequestState getState();
 	public void setState(RequestState s);
-
 	
+	//Add car seat addition request
+	public boolean hasCarSeatFlag();
+	public boolean setCarSeatFlag(boolean carSeatFlag);
 
 }
