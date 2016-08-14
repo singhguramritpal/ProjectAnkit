@@ -1,6 +1,11 @@
 package com.uber.members;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Scanner;
+
+import com.uber.request.Request;
 
 public class SignUpRider {
 
@@ -79,5 +84,5 @@ public class SignUpRider {
 		new StoreRiderData(rider);
 	}
 
-	
 }
+

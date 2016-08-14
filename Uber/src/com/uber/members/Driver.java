@@ -6,6 +6,7 @@ public class Driver extends Member{
 	private String vehicleRegNumber;
 	private String vehicleType;
 	private String vehicleColor;
+	private int driverId;
 	
 	
 	public String getLicenseNumber() {
@@ -31,5 +32,11 @@ public class Driver extends Member{
 	}
 	public void setVehicleColor(String vehicleColor) {
 		this.vehicleColor = vehicleColor;
+	}
+	public int getDriverId() {
+		return driverId;
+	}
+	public void setDriverId(int driverId) {
+		this.driverId = driverId;
 	}
 }

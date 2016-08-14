@@ -24,7 +24,7 @@ public class GetsRequest implements DriverState{
 
 	public void getsRequest() {
 		System.out.println("Driver is Processing the Request");
-		driver.setDriverState(driver.getsRequestState());
+		//driver.setDriverState(driver.getsRequestState());
 	}
 
 	public void hasRider() {

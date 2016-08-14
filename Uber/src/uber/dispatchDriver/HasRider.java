@@ -30,7 +30,7 @@ public class HasRider implements DriverState{
 
 	public void hasRider() {
 		System.out.println("Driver has the Rider and is Ready for the Ride");
-		driver.setDriverState(driver.getHasRider());
+		//driver.setDriverState(driver.getHasRider());
 	}
 
 }

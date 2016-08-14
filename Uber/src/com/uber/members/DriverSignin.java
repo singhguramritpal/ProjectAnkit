@@ -8,21 +8,21 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class DriverSignin {
-
+	Driver driver;
 	public DriverSignin(){
 		signIn();
 	}
 
-	public void signIn(){
+	public Driver signIn(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your Username/EmailId: ");
 		String email = sc.nextLine();
 		System.out.println("Enter Password: ");
 		String pass = sc.nextLine();
-		System.out.println(checkDriver(email,pass));
+		return checkDriver(email,pass);
 	}
 
-	public String checkDriver(String email, String pass){
+	public Driver checkDriver(String email, String pass){
 		Connection con = null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -41,9 +41,22 @@ public class DriverSignin {
 			System.out.println(rs.toString());
 
 			if(rs.next()){
+				
+				driver.setDriverId(rs.getInt("DriverId"));
+				driver.setAddress(rs.getString("Address"));
+				driver.setDob(rs.getString("DOB"));
+				driver.setEmail(rs.getString("Email"));
+				driver.setLicenseNumber(rs.getString("DriverLicenseNumber"));
+				driver.setName(rs.getString("DriverName"));
+				driver.setPass(rs.getString("Password"));
+				driver.setPhone(rs.getString("Phone"));
+				driver.setVehicleColor(rs.getString("VehicleColor"));
+				driver.setVehicleRegNumber(rs.getString("VehicleRegNumber"));
+				driver.setVehicleType(rs.getString("VehicleType"));
+
 				String stm = "update Driver set DriverStatus='online' where Email='"+email+"'";
 				st.executeUpdate(stm);
-				return "Driver is Signed in";
+				return driver;
 			}
 
 		} catch (SQLException ex) {
@@ -71,7 +84,7 @@ public class DriverSignin {
 				System.out.println("Error: "+ex.getMessage());
 			}
 		}
-		return "Username or password is Wrong";
+		return null;
 	}
 	
 	

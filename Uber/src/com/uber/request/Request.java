@@ -4,55 +4,131 @@ import java.util.Date;
 
 public class Request implements RideRequestInterface {
 	
-	private int requestId;
-	
-	private String pickupLoc;
-	private String destination;
-	
-	private Date pickupDate;
-	private String vehicleType;
-	private double fareEstimation;
-	
+
+	private long requestId;
 	RequestState requestState;
+	private String requestType="normal";
+
+	private String pickUpLocation;
+	private String destination;
+
+	private int pickX, pickY;
+	private int destX, destY;
+
+	private Date bookingDate;
+	private String vechicleType;
+	private double FareEstimation;
+	
+
+	
+	public int getPickX() {
+		return pickX;
+	}
+
+	public void setPickX(int pickX) {
+		this.pickX = pickX;
+	}
+
+	public int getPickY() {
+		return pickY;
+	}
+
+	public void setPickY(int pickY) {
+		this.pickY = pickY;
+	}
+
+	public int getDestX() {
+		return destX;
+	}
+
+	public void setDestX(int destX) {
+		this.destX = destX;
+	}
+
+	public int getDestY() {
+		return destY;
+	}
+
+	public void setDestY(int destY) {
+		this.destY = destY;
+	}
+
 	
 	public Request() {
 		requestState = new RequestInQueue(this);
 	}
-	public int getRequestId() {
+
+	
+
+	public long getRequestId() {
 		return requestId;
 	}
-	public void setRequestId(int requestId) {
-		this.requestId = requestId;
+
+	public void setRequestId(long time) {
+		this.requestId = time;
 	}
-	public String getPickupLoc() {
-		return pickupLoc;
+
+	public String getRequestType() {
+		return requestType;
 	}
-	public void setPickupLoc(String pickupLoc) {
-		this.pickupLoc = pickupLoc;
+
+	public void setRequestType(String requestType) {
+		this.requestType = requestType;
 	}
+
+	public String getPickUpLocation() {
+		return pickUpLocation;
+	}
+
+	public void setPickUpLocation(String pickUpLocation) {
+		this.pickUpLocation = pickUpLocation;
+	}
+
 	public String getDestination() {
 		return destination;
 	}
+
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	public Date getPickupDate() {
-		return pickupDate;
-	}
-	public void setPickupDate(Date pickupDate) {
-		this.pickupDate = pickupDate;
-	}
-	public String getVehicleType() {
-		return vehicleType;
-	}
-	public void setVehicleType(String vehicleType) {
-		this.vehicleType = vehicleType;
-	}
+
 	public double getFareEstimation() {
-		return fareEstimation;
+		return FareEstimation;
 	}
-	public void setFareEstimation(double fareEstimation) {
-		this.fareEstimation = fareEstimation;
+
+	public void setFareEstimation(double avg) {
+		FareEstimation = avg;
+	}
+
+	public Date getBookingDate() {
+		return bookingDate;
+	}
+
+	public void setBookingDate(Date bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("Request:");
+		sb.append("\n___________________________________");
+		sb.append("\nType of request: " + requestType);
+		sb.append("\nPickup Location: " + pickUpLocation + " [" + pickX + ","
+				+ pickY + "]");
+		sb.append("\nDestination: " + destination + " [" + destX + "," + destY
+				+ "]");
+		sb.append("\nBooking Date: " + bookingDate);
+		sb.append("\nCar Type: " + vechicleType);
+	
+		sb.append("\nEstimated Fare: " + FareEstimation);
+		
+
+		String string = sb.toString();
+
+		return string;
 	}
 	@Override
 	public void requestInQueue() {
@@ -92,6 +168,14 @@ public class Request implements RideRequestInterface {
 		// TODO Auto-generated method stub
 		this.requestState=requestState;
 		
+	}
+
+	public String getVechicleType() {
+		return vechicleType;
+	}
+
+	public void setVechicleType(String vechicleType) {
+		this.vechicleType = vechicleType;
 	}
 
 }
